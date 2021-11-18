@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dimen_190"
+    android:layout_marginHorizontal="@dimen/dimen_16"
+    android:layout_marginVertical="@dimen/dimen_5"
+    android:background="@color/news_background">
+
+    <TextView
+        android:id="@+id/topic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:textSize="@dimen/font_size_20"
+        tools:text="Экономика" />
+
+    <TextView
+        android:id="@+id/author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:fontFamily="cursive"
+        android:textSize="@dimen/font_size_16"
+        tools:text="Диана" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:textSize="@dimen/font_size_16"
+        android:typeface="monospace"
+        tools:text="20.10.2021" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginHorizontal="@dimen/dimen_5"
+        android:layout_marginVertical="@dimen/dimen_32"
+        android:textSize="@dimen/font_size_24"
+        tools:text="Иностранные инвесторы" />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginHorizontal="@dimen/dimen_16"
+        android:layout_marginBottom="@dimen/dimen_20"
+        android:ellipsize="end"
+        android:textSize="@dimen/font_size_16"
+        tools:text="Иностранные инвесторы в январе-сентябре вложили в экономику Беларуси $6,7 млрд" />
+</RelativeLayout>
