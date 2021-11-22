@@ -3,6 +3,7 @@ package com.example.homework21.presentation
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.homework21.data.NewsData
 import com.example.homework21.domain.NewsInteractor
 import kotlinx.coroutines.CoroutineScope
@@ -14,11 +15,8 @@ class FilterSharedViewModel(private val interactor: NewsInteractor) : ViewModel(
     val filterLiveData: LiveData<List<NewsData>> get() = _filterLiveData
     private val _filterLiveData = MutableLiveData(interactor.loadText())
 
-    private val scope = CoroutineScope(Dispatchers.Main)
-
-
     fun setDateFilter(filter: String) {
-        scope.launch {
+        viewModelScope.launch {
             _filterLiveData.value = interactor.loadText().filter { newsData ->
                 newsData.date == filter
             }
@@ -26,7 +24,7 @@ class FilterSharedViewModel(private val interactor: NewsInteractor) : ViewModel(
     }
 
     fun setTopicFilter(filter: String) {
-        scope.launch {
+        viewModelScope.launch {
             _filterLiveData.value = interactor.loadText().filter { newsData ->
                 newsData.topic == filter
             }
@@ -34,7 +32,7 @@ class FilterSharedViewModel(private val interactor: NewsInteractor) : ViewModel(
     }
 
     fun setAuthorFilter(filter: String) {
-        scope.launch {
+        viewModelScope.launch {
             _filterLiveData.value = interactor.loadText().filter { newsData ->
                 newsData.author == filter
             }

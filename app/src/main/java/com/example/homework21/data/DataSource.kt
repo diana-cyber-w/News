@@ -25,6 +25,7 @@ class DataSource : NewsInteractor {
             "Белорусские баскетболистки одержали вторую победу в квалификации ЧЕ"
         )
         val dateList = mutableListOf("23.10.2021", "14.11.2021", "03.11.2021", "12.11.2021")
+
         for (i in 0..3) {
             for (j in 0..3) {
                 list.add(

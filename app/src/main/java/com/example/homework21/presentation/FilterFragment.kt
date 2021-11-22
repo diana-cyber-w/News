@@ -6,6 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.homework21.R
+import com.example.homework21.data.NewsAuthor
+import com.example.homework21.data.NewsDate
+import com.example.homework21.data.NewsTopic
 import kotlinx.android.synthetic.main.filter_fragment_layout.*
 import org.koin.android.viewmodel.ext.android.sharedViewModel
 
@@ -31,12 +34,16 @@ class FilterFragment : Fragment() {
         initRadioGroup()
     }
 
+    private val dateFilter: NewsDate = NewsDate.NOVEMBER
+    private val authorFilter: NewsAuthor = NewsAuthor.GLEB
+    private val topicFilter: NewsTopic = NewsTopic.POLITICS
+
     private fun initRadioGroup() {
         radioGroup.setOnCheckedChangeListener { radioGroup, buttonId ->
             when (buttonId) {
-                R.id.filterByDate -> filterViewModel.setDateFilter("14.11.2021")
-                R.id.filterByAuthor -> filterViewModel.setAuthorFilter("Глеб Глебов")
-                R.id.filterByTopic -> filterViewModel.setTopicFilter("Политика")
+                R.id.filterByDate -> filterViewModel.setDateFilter(dateFilter.date)
+                R.id.filterByAuthor -> filterViewModel.setAuthorFilter(authorFilter.author)
+                R.id.filterByTopic -> filterViewModel.setTopicFilter(topicFilter.topic)
             }
 
             filterNews.setOnClickListener {
