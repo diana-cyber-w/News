@@ -34,6 +34,12 @@ class NewsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initObserves()
         initRecycler()
+        loader.setOnClickListener {
+            filterSharedViewModel.loadNews()
+        }
+        inserting.setOnClickListener {
+            filterSharedViewModel.insertNews()
+        }
         filter.setOnClickListener {
             val filterFragment = FilterFragment.newInstance()
             replaceFragment(FilterFragment.TAG, filterFragment)

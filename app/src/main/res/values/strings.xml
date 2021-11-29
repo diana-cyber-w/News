@@ -4,4 +4,5 @@
     <string name="filter_by_date">Фильтровать по дате 14.11.2021</string>
     <string name="filter_by_topic">Фильтровать по теме Политика</string>
     <string name="filter_by_author">Фильтровать по автору Глеб Глебов</string>
+    <string name="add_to_database">Добавить в базу данных</string>
 </resources>

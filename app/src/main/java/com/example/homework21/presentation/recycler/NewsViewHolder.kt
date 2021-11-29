@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.homework21.R
-import com.example.homework21.data.NewsData
+import com.example.homework21.domain.News
 import kotlinx.android.synthetic.main.news_layout.view.*
 
 class NewsViewHolder private constructor(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -27,11 +27,11 @@ class NewsViewHolder private constructor(itemView: View) : RecyclerView.ViewHold
     private val topicTextView: TextView by lazy { itemView.topic }
     private val textTextView: TextView by lazy { itemView.text }
 
-    fun bindView(item: NewsData) {
-        titleTextView.text = item.title
-        authorTextView.text = item.author
-        dateTextView.text = item.date
-        topicTextView.text = item.topic
-        textTextView.text = item.text
+    fun bindView(item: News) {
+        titleTextView.text = item.title.title
+        authorTextView.text = item.author.author
+        dateTextView.text = item.date.date
+        topicTextView.text = item.topic.topic
+        textTextView.text = item.text.text
     }
 }

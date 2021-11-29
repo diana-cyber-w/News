@@ -7,7 +7,9 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -15,16 +17,34 @@
             android:id="@+id/recycler"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimen_36"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
-        <ImageButton
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/inserting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:layout_margin="@dimen/dimen_16"
+            android:contentDescription="@string/add_to_database"
+            android:src="@drawable/ic_baseline_cloud_upload_24" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/loader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:layout_margin="@dimen/dimen_16"
+            android:contentDescription="@string/add_to_database"
+            android:src="@drawable/ic_baseline_data_usage_24" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/filter"
             android:layout_width="wrap_content"
-            android:layout_height="@dimen/dimen_36"
-            android:layout_marginHorizontal="@dimen/dimen_16"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_margin="@dimen/dimen_16"
+            android:contentDescription="@string/add_to_database"
             android:src="@drawable/ic_baseline_filter_alt_24" />
     </FrameLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
