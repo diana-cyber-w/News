@@ -1,29 +1,19 @@
 package com.example.homework21.presentation
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.homework21.R
+import com.example.homework21.databinding.FilterFragmentLayoutBinding
 import com.example.homework21.domain.News
 import kotlinx.android.synthetic.main.filter_fragment_layout.*
 import org.koin.android.viewmodel.ext.android.sharedViewModel
 
-class FilterFragment : Fragment() {
+class FilterFragment : Fragment(R.layout.filter_fragment_layout) {
 
-    companion object {
-        fun newInstance() = FilterFragment()
-        const val TAG = "filter"
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? = inflater.inflate(
-        R.layout.filter_fragment_layout, container, false
-    )
+    private val binding: FilterFragmentLayoutBinding by viewBinding(FilterFragmentLayoutBinding::bind)
 
     private val filterViewModel: FilterSharedViewModel by sharedViewModel()
 
@@ -33,7 +23,7 @@ class FilterFragment : Fragment() {
     }
 
     private fun initRadioGroup() {
-        radioGroup.setOnCheckedChangeListener { radioGroup, buttonId ->
+        binding.radioGroup.setOnCheckedChangeListener { radioGroup, buttonId ->
             when (buttonId) {
                 R.id.filterByDate -> filterViewModel.setDateFilter(News.Date.NOVEMBER)
                 R.id.filterByAuthor -> filterViewModel.setAuthorFilter(News.Author.GLEB)
@@ -41,17 +31,9 @@ class FilterFragment : Fragment() {
             }
 
             filterNews.setOnClickListener {
-                val newsFragment = NewsFragment.newInstance()
-                replaceFragment(NewsFragment.TAG, newsFragment)
+                findNavController().navigate(R.id.toNewsFragment)
             }
         }
     }
 
-    private fun replaceFragment(tag: String, newInstance: NewsFragment) {
-        activity?.supportFragmentManager
-            ?.beginTransaction()
-            ?.addToBackStack(tag)
-            ?.replace(R.id.container, newInstance)
-            ?.commit()
-    }
 }

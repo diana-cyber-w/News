@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="@dimen/dimen_190"
@@ -56,4 +57,5 @@
         android:ellipsize="end"
         android:textSize="@dimen/font_size_16"
         tools:text="Иностранные инвесторы в январе-сентябре вложили в экономику Беларуси $6,7 млрд" />
+
 </RelativeLayout>

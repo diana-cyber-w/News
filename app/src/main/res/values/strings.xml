@@ -5,4 +5,7 @@
     <string name="filter_by_topic">Фильтровать по теме Политика</string>
     <string name="filter_by_author">Фильтровать по автору Глеб Глебов</string>
     <string name="add_to_database">Добавить в базу данных</string>
+    <string name="title_text">Иностранные инвесторы</string>
+    <string name="text_text">Иностранные инвесторы в январе-сентябре вложили в экономику Беларуси $6,7 млрд</string>
+    <string name="btn_to_homework">Homework</string>
 </resources>
