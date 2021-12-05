@@ -20,9 +20,7 @@
         app:titleText="Hello,"
         app:titleTextColor="@color/purple_200"
         app:titleTextSize="@dimen/dimen_64"
-        app:circleDrawDuration="1000"/>
-
-
+        app:circleDrawDuration="1000" />
 
     <Button
         android:id="@+id/toHomework"

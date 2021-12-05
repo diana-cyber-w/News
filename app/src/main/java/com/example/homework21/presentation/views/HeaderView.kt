@@ -48,7 +48,6 @@ class HeaderView(context: Context, attrs: AttributeSet) :
     private var valueAnimator = ValueAnimator.ofFloat(0f, 360f)
 
     init {
-        isClickable = true
 
         context.theme.obtainStyledAttributes(attrs, R.styleable.HeaderView, 0, 0)
             .apply {
@@ -92,7 +91,6 @@ class HeaderView(context: Context, attrs: AttributeSet) :
         resolveSubTitleTextSize()
         titleCoordinates = calculateTitleCoordinates()
         subTitleCoordinates = calculateSubTitleCoordinates()
-        onStartAnimation()
     }
 
     override fun onDraw(canvas: Canvas?) {
@@ -148,7 +146,7 @@ class HeaderView(context: Context, attrs: AttributeSet) :
         return x + width / 2f - (subTitlePaint.descent() + subTitlePaint.ascent()) / 2f to y + height / 2f + titlePaint.textSize
     }
 
-    private fun onStartAnimation() {
+    fun onStartAnimation() {
         valueAnimator.addUpdateListener { valueAnimator ->
             val value = valueAnimator.animatedValue as Float
             circleSweepAngle = value
