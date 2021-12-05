@@ -4,20 +4,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.example.homework21.presentation.customViews.HeaderView
+    <com.example.homework21.presentation.views.HeaderView
         android:id="@+id/headerView"
         android:layout_width="@dimen/dimen_0"
         android:layout_height="@dimen/dimen_0"
+        app:circleColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:squareColor="@color/teal_700"
         app:subTitleText="everyone"
         app:subTitleTextColor="@color/teal_200"
         app:subTitleTextSize="@dimen/dimen_190"
         app:titleText="Hello,"
         app:titleTextColor="@color/purple_200"
-        app:titleTextSize="@dimen/dimen_64" />
+        app:titleTextSize="@dimen/dimen_64"
+        app:circleDrawDuration="1000"/>
+
+
 
     <Button
         android:id="@+id/toHomework"
@@ -27,4 +32,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/animation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/start_animation_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
